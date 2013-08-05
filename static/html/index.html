@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap 101 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+  <link rel="stylesheet" media="screen" href="/static/css/bootstrap.min.css">
+  <!-- JavaScript plugins (requires jQuery) -->
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="/static/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/static/css/bootstrap-responsive.min.css">
+  <style type="text/css">
+    body {
+      padding-top: 60px;
+      padding-bottom: 40px;
+    }
+    .main {
+      width: 800px;
+      height: 800px;
+
+      position: absolute;
+      top:0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      padding: 15px;
+      margin: auto;
+
+      background: url(/static/img/bg.jpg) no-repeat center center fixed;
+      background-size: auto;
+    }
+    .box {
+      position: absolute;
+      bottom: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .center {
+      text-align: center;
+    }
+  </style>  
+  <script type="text/javascript">
+    $("document").ready(function() {
+        $('.welcome').click(function() {
+          $('html, body').animate({
+            scrollTop: $('#welcome').offset().top
+          }, 2000);
+    });
+        $('.aboutus').click(function() {
+          $('html, body').animate({
+            scrollTop: $('#aboutus').offset().top
+          }, 2000);
+    });
+        $('.ceremony').click(function() {
+          $('html, body').animate({
+            scrollTop: $('#ceremony').offset().top
+          }, 2000);
+    });
+        $('.accomodation').click(function() {
+          $('html, body').animate({
+            scrollTop: $('#accomodation').offset().top
+          }, 2000);
+        });
+        $('.travel').click(function() {
+          $('html, body').animate({
+            scrollTop: $('#travel').offset().top
+          }, 2000);
+        });
+        $('.registry').click(function() {
+          $('html, body').animate({
+            scrollTop: $('#registry').offset().top
+          }, 2000);
+        });
+    });
+  </script>
+  </head>
+  <body data-spy="scroll" data-target=".navbar">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">Simon & Jackie's Wedding</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#welcome" class="welcome" data-toggle="pill">welcome</a></li>
+              <li><a href="#aboutus" class="aboutus" data-toggle="pill">about us</a></li>
+              <li><a href="#ceremony" class="ceremony" data-toggle="pill">ceremony</a></li>
+              <li><a href="#accomodation" class="accomodation" data-toggle="pill">accomodation</a></li>
+              <li><a href="#travel" class="travel" data-toggle="pill">getting there</a></li>
+              <li><a href="#registry" class="registry" data-toggle="pill">gift registry</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-unit" id="welcome">
+      <h1>Welcome to our wedding website!</h1>
+      <p>We're excited to see everyone on July, 26th 2014 in San Francisco.</p>
+    </div>
+    <div class="hero-unit" id="aboutus">
+      <h1>Simon and Jackie!</h1>
+    </div>
+    <div class="hero-unit" id="ceremony">
+      <h1>Getting married at the zoo!</h1>
+    </div>
+    <div class="hero-unit" id="accomodation">
+     <h1>Hotels</h1>
+    </div>
+    <div class="hero-unit" id="travel">
+     <h1>Flights</h1>
+    </div>
+    <div class="hero-unit" id="registry">
+     <h1>Presents</h1>
+    </div>
+
+  </body>
+</html>
