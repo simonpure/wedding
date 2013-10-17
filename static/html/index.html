@@ -27,40 +27,11 @@
       position: absolute;
       top: 10%;
       right: 5%;
-      width: 770px;
-      height: 620px;
+      width: 639px;
+      height: 468px;
       padding: 100px 10px 10px 10px;
-      background-image: url(static/img/card.png);
-      background-size: 100%, 100%;
-    }
-    .center {
-      text-align: center;
-    }
-    .title {
-      width: 20px;
-      cursor: pointer;
-      font-size: 18px;
-      font-weight: bold;
-    }
-    .menu {
-      padding: 30px 10px 30px 10px;
-      border-top: 1px solid black;
-      border-bottom: 1px solid black;
-    }
-    .content {
-      margin: 10px;
-      width: 100%;
-      height: 100%;
-      font-size: 18px;
-      line-height: 150%;
-      font-family: 'Gilda Display', serif;
-      font-weight: bold;
-    }
-    .hidden {
-      display: none:
-    }
-    .visible {
-      display: block;
+      background-image: url(static/img/savethedate.png);
+      background-size: cover;
     }
   </style>
   <script type="text/javascript">
@@ -68,121 +39,6 @@
   </head>
   <body>
     <div class="card">
-      <div class="menu center">
-        <span class="title welcome">
-          welcome
-        </span>
-        <span class="separator"> | </span>
-        <span class="title about">
-          about us
-        </span>
-        <span class="separator"> | </span>
-        <span class="title rsvp">
-          rsvp
-        </span>
-        <span class="separator"> | </span>
-        <span class="title ceremony">
-          ceremony &amp; reception
-        </span>
-        <span class="separator"> | </span>
-        <span class="title accommodation">
-          accommodation
-        </span>
-        <span class="separator"> | </span>
-        <span class="title registry">
-          registry
-        </span>
-      </div>
-      <div class="content visible" id="welcome">
-        welcome to simon &amp; jackie's wedding web site!
-      </div>
-      <div class="content hidden" id="about">
-        Love Timeline:<br>
-        Simon &amp; Jackie have been on their first official date on Valentine's day in 2011 when
-        Simon asked her out so nobody else would. He also forgot to get cash, so Jackie ended up
-        paying for the food since it was a cash only place.
-      </div>
-      <div class="content hidden" id="rsvp">
-        Please let us know if you can attend our wedding.
-          <div>
-            <strong>Are you able to join us?</strong><br>
-            <select name="accepted[]">
-              <option value="1" selected="selected">Accepts with Pleasure</option>
-              <option value="0">Declines with Regrets</option>
-            </select>
-          </div>
-Total in your Party
-<select name="number_of_guests">
-                  <option value="1" selected="selected">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-              </select>
-
-<div class="guest">
-        <div>
-          <select name="honorific_title[]">
-            <option value="" selected="selected">Title...</option>
-            <option value="ms">Ms.</option>
-            <option value="mrs">Mrs.</option>
-            <option value="mr">Mr.</option>
-            <option value="dr">Dr.</option>
-          </select>
-        </div>
-        <div>
-          <div style="display: inline-block; margin: 0 10px 7px 0;">
-            <strong>First name</strong><br>
-            <input type="text" name="first_name[]" style="width: 150px;" value="asdfdsa">
-          </div>
-          <div style="display: inline-block;">
-            <strong>Last name</strong><br>
-            <input type="text" name="last_name[]" style="width: 150px;" value="sadfdsa">
-          </div>
-          <div style="display: inline-block;">
-            <strong>Allergies?</strong><br>
-            <input type="text" name="allergies[]" style="width: 150px;" value="sadfdsa">
-          </div>
-          <br>
-          <div>
-            <strong>Your Email Address</strong><br>
-            <input type="text" name="email" style="width: 150px;" value="sadfdsa">
-          </div>
-          <a class="ish-button-medium" href="#" onclick="$(this).parents('form').submit()">Submit RSVP <span class="ish-icon"><span class="icon-angle-double-right"></span></span></a>
-                  </div>
-      </div>
-Thank you! If you have any questions, don't hesitate to contact us at wedding@simonandjackie.info
-      </div>
-      <div class="content hidden" id="ceremony">
-        The wedding will take place in the SF Zoo on July, 26th 2014!
-      </div>
-      <div class="content hidden" id="accommodation">
-        We recommend the following hotels.
-      </div>
-      <div class="content hidden" id="registry">
-        We have registered at the following places:
-      </div>
     </div>
-    <script type="text/javascript">
-      var FADE_IN_DURATION = 400;
-      var FADE_OUT_DURATION = 400;
-      $(".title").each(function() {
-          $(this).click(function() {
-            var menuId = $(this).attr("class").split(/\s+/).slice(-1)[0];
-            console.log(menuId);
-            $(".content.visible").fadeOut(FADE_OUT_DURATION, function() {
-              $(this).removeClass("visible").addClass("hidden");
-              $("#" + menuId).fadeIn(FADE_IN_DURATION, function() {
-                $(this).removeClass("hidden").addClass("visible");
-              });
-              });
-            });
-          });
-    </script>
   </body>
 </html>
