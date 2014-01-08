@@ -9,6 +9,7 @@
   <!-- JavaScript plugins (requires jQuery) -->
   <script src="http://code.jquery.com/jquery.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
   <script src="/static/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="/static/css/bootstrap-responsive.min.css">
   <style type="text/css">
@@ -103,18 +104,20 @@
         paying for the food since it was a cash only place.
       </div>
       <div class="content hidden" id="rsvp">
+        <div id="rsvpform_outer">
         Please let us know if you can attend our wedding.
-        <form>
+        <form id="rsvpform">
           <div>
             <strong>Are you able to join us?</strong><br>
-            <select name="accepted[]">
-              <option value="1" selected="selected">Accepts with Pleasure</option>
-              <option value="0">Declines with Regrets</option>
+            <select name="accepted" class="required">
+              <option value="" selected="selected">Response...</option>
+              <option value="yes">Accepts with Pleasure</option>
+              <option value="no">Declines with Regrets</option>
             </select>
-          </div>
-Total in your Party
-<select name="number_of_guests">
-                  <option value="1" selected="selected">1</option>
+Total in your Party including yourself
+<select name="party_size">
+                  <option value="" selected="selected">Number of guests...</option>
+                  <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                   <option value="4">4</option>
@@ -125,10 +128,12 @@ Total in your Party
                   <option value="9">9</option>
                   <option value="10">10</option>
               </select>
+          </div>
 
 <div class="guest">
         <div>
-          <select name="honorific_title[]">
+          Select your title
+          <select name="title">
             <option value="" selected="selected">Title...</option>
             <option value="ms">Ms.</option>
             <option value="mrs">Mrs.</option>
@@ -139,26 +144,32 @@ Total in your Party
         <div>
           <div style="display: inline-block; margin: 0 10px 7px 0;">
             <strong>First name</strong><br>
-            <input type="text" name="first_name[]" style="width: 150px;" value="asdfdsa">
+            <input type="text" name="first_name" style="width: 150px;" value="" placeholder="First name">
           </div>
           <div style="display: inline-block;">
             <strong>Last name</strong><br>
-            <input type="text" name="last_name[]" style="width: 150px;" value="sadfdsa">
+            <input type="text" name="last_name" style="width: 150px;" value="" placeholder="Last name">
           </div>
           <div style="display: inline-block;">
             <strong>Allergies?</strong><br>
-            <input type="text" name="allergies[]" style="width: 150px;" value="sadfdsa">
+            <input type="text" name="allergies" style="width: 150px;" value="" placeholder="Allergies...">
           </div>
           <br>
           <div>
             <strong>Your Email Address</strong><br>
-            <input type="text" name="email" style="width: 150px;" value="sadfdsa">
+            <input type="text" name="email" style="width: 150px;" value="" placeholder="Email address">
           </div>
-          <a class="ish-button-medium" href="#" onclick="$(this).parents('form').submit()">Submit RSVP <span class="ish-icon"><span class="icon-angle-double-right"></span></span></a>
-                  </div>
+          <input type="submit" value="Submit RSVP" /> 
+        </div>
                 </div>
               </form>
-Thank you! If you have any questions, don't hesitate to contact us at wedding@simonandjackie.info
+            </div>
+              <div id="conf_yes" class="confirmation hidden">
+                Thank you! We're delighted to have you there! If you have any questions, don't hesitate to contact us at wedding@simonandjackie.info
+              </div>
+              <div id="conf_no" class="confirmation hidden">
+                Thank you! We're sorry you won't make it! If you have any questions, don't hesitate to contact us at wedding@simonandjackie.info
+              </div>
       </div>
       <div class="content hidden" id="ceremony">
         The wedding will take place in the SF Zoo on July, 26th 2014!
@@ -176,7 +187,6 @@ Thank you! If you have any questions, don't hesitate to contact us at wedding@si
       $(".title").each(function() {
           $(this).click(function() {
             var menuId = $(this).attr("class").split(/\s+/).slice(-1)[0];
-            console.log(menuId);
             $(".content.visible").fadeOut(FADE_OUT_DURATION, function() {
               $(this).removeClass("visible").addClass("hidden");
               $("#" + menuId).fadeIn(FADE_IN_DURATION, function() {
@@ -185,6 +195,36 @@ Thank you! If you have any questions, don't hesitate to contact us at wedding@si
               });
             });
           });
+        $("#rsvpform").validate({
+          rules: {
+            accepted: "required",
+            party_size: "required",
+            title: "required",
+            first_name: "required",
+            last_name: "required",
+            email: {
+              required: true,
+              email: true
+            },
+          },
+          messages: {
+            accepted: "Please select your attendance",
+            party_size: "Please specify # of guests including yourself",
+            title: "Please specify your title",
+            first_name: "Please enter your first name",
+            last_name: "Please enter your last name",
+            email: "Please enter a valid email address"
+          },
+          submitHandler: function(form) {
+            $.post("/", $(form).serialize())
+              .done(
+                $("#rsvpform_outer").fadeOut(FADE_OUT_DURATION, function() {
+                  $(this).removeClass("visible").addClass("hidden");
+                  $("#conf_" + form.accepted.value).fadeIn(FADE_IN_DURATION, function() {
+                    $(this).removeClass("hidden").addClass("visible");
+                  });
+                }));
+           }});
     </script>
   </body>
 </html>

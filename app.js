@@ -6,13 +6,20 @@ var rsvp = require('./rsvp');
 var default_port = 8080;
 var static_dir = 'static';
 var index_html = path.join(__dirname, static_dir) + '/html/index.html';
-
+var port = process.env.PORT || default_port;
 var app = express();
-app.use(express.logger());
-app.use('/static', express.static(path.join(__dirname, static_dir)));
-app.use(app.router);
-app.use(express.errorHandler());
-app.use(express.bodyParser());
+
+app.configure(function() {
+  app.use(express.logger());
+  app.use('/static', express.static(path.join(__dirname, static_dir)));
+  app.use(express.errorHandler());
+  app.use(express.urlencoded());
+  app.use(app.router); // Needs to be called last.
+});
+
+app.listen(port, function() {
+  console.log("Listening on %s.", port);
+});
 
 app.get('/', function(request, response) {
   fs.readFile(index_html, encoding = 'utf8', function(err, data) {
@@ -24,11 +31,10 @@ app.get('/', function(request, response) {
 app.post('/', function(request, response) {
   console.log(request.body);
   response.send(request.body);
-  var info = [request.body.title, request.body.firstName, request.body.lastName];
+  var info = [request.body.title, request.body.first_name,
+      request.body.last_name, request.body.accepted,
+      request.body.party_size, request.body.email,
+      request.body.allergies];
   rsvp.guest(info);
 });
 
-var port = process.env.PORT || default_port;
-app.listen(port, function() {
-  console.log("Listening on %s.", port);
-});

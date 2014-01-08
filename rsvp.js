@@ -17,7 +17,8 @@ var sheetReady = function (data, err, spreadsheet) {
   spreadsheet.receive(function(err, rows, info) {
     if (err) throw err;
     var row = {};
-    row[info.nextRow] = data;
+    row[info.nextRow] = [data];
+    console.log(row);
     spreadsheet.add(row);
     spreadsheet.send(function(err) {
       if (err) throw err;
