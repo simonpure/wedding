@@ -1,9 +1,17 @@
 (function() {
   var FADE_IN_DURATION = 400;
   var FADE_OUT_DURATION = 400;
+
+  var menuId = window.location.hash;
+  if (menuId.length > 0) {
+    $(".content.visible").removeClass("visible").addClass("hidden");
+    $(menuId).removeClass("hidden").addClass("visible");
+  }
+
   $(".title").each(function() {
   $(this).click(function() {
     var menuId = $(this).attr("class").split(/\s+/).slice(-1)[0];
+    window.location.hash = menuId;
     $(".content.visible").fadeOut(FADE_OUT_DURATION, function() {
       $(this).removeClass("visible").addClass("hidden");
       $("#" + menuId).fadeIn(FADE_IN_DURATION, function() {
@@ -12,6 +20,7 @@
       });
     });
   });
+
   $("#attendance").change(function() {
     ($(this).find(':selected').val() == "yes" ? 
       $("#rsvp_details").fadeIn(FADE_IN_DURATION, function() {
