@@ -2,6 +2,7 @@
   var FADE_IN_DURATION = 400;
   var FADE_OUT_DURATION = 400;
 
+  // Display correct content based on hash.
   var menuId = window.location.hash;
   if (menuId.length > 0) {
     $(".content.visible").removeClass("visible").addClass("hidden");
@@ -16,6 +17,8 @@
       $(this).removeClass("visible").addClass("hidden");
       $("#" + menuId).fadeIn(FADE_IN_DURATION, function() {
         $(this).removeClass("hidden").addClass("visible");
+        // Hack to force a refresh of Google Maps.
+        $(".map iframe")[0].src = $(".map iframe")[0].src;
       });
       });
     });
@@ -62,4 +65,5 @@
             });
           }));
    }});
+
 })();

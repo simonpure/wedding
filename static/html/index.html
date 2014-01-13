@@ -3,7 +3,7 @@
   <head>
     <title>Simon and Jackie's Wedding</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='http://fonts.googleapis.com/css?family=Gilda+Display|Inika|Trykker|Jacques+Francois' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Gilda+Display|Inika|Trykker|Jacques+Francois|Condiment|Alegreya' rel='stylesheet' type='text/css'>
     <!-- Bootstrap -->
     <link rel="stylesheet" media="screen" href="/static/css/bootstrap.min.css">
     <!-- JavaScript plugins (requires jQuery) -->
@@ -19,7 +19,15 @@
     </script>
   </head>
   <body>
-    <div class="card">
+    <div class="card border">
+      <div class="top">
+        <div class="header center">
+          Jackie &amp; Simon's Wedding
+        </div>
+        <div class="date center">
+          July 26th, 2014
+        </div>
+      </div>
       <div class="menu center">
         <span class="title welcome">
           welcome
@@ -45,8 +53,9 @@
           RSVP
         </span>
       </div>
-      <div class="content visible" id="welcome">
-        welcome to jackie &amp; simon's wedding web site!
+      <div class="center content visible" id="welcome">
+        Thank you for sharing this very special day with us!<br>
+        <img class="border" src="/static/img/welcome.jpg" />
       </div>
       <div class="content hidden" id="about">
         Love Timeline:<br>
@@ -116,37 +125,53 @@
           Thank you! We're sorry you can't make it! If you have any questions, don't hesitate to contact us at wedding@simonandjackie.info
         </div>
       </div>
-      <div class="content hidden" id="ceremony">
-        The wedding will take place in the SF Zoo on July, 26th 2014!
-        <div class="map">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x808f7d71f302a28d%3A0x75fd486edbc13dd7!2sSan+Francisco+Zoo%2C+Zoo+Road%2C+San+Francisco%2C+CA!5e0!3m2!1sen!2sus!4v1389469135008" width="600" height="450" frameborder="0" style="border:0"></iframe>
+      <div class="content center hidden" id="ceremony">
+        <div class="big">
+          The wedding will take place at the San Francisco Zoo!
+        </div>
+        <div class="agenda center"><table><tr>
+              <td><div>Ceremony<br><img src="/static/img/savanna.jpg" /><br> African Savanna 5pm</div></td>
+              <td><div>Cocktail hour<br><img src="/static/img/carousel.jpg" /><br>Carousel 6pm</div></td>
+              </tr><tr>
+              <td><div>Reception<br><img src="/static/img/hall.jpg" /><br>Great Oak Hall 7pm</div></td>
+              <td><div class="map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x808f7d71f302a28d%3A0x75fd486edbc13dd7!2sSan+Francisco+Zoo%2C+Zoo+Road%2C+San+Francisco%2C+CA!5e0!3m2!1sen!2sus!4v1389469135008" width="250" height="225" frameborder="0" style="border:0"></iframe>
+              </div><td>
+          </tr></table>
         </div>
       </div>
       <div class="content hidden" id="accommodation">
-        We have organized a group discount at the following hotels:<br>
-        <br>
+        <div class="center">
+          A group discount is available at the following hotels when reserved before June 20th, 2014:<br>
+          <br>
 
-        <span>
-          The Westin San Francisco Airport<br>
-          1 Old Bayshore Highway<br>
-          Millbrae, CA 94030, United States<br>
-          <img width="100px" src="https://www.starwoodhotels.com/pub/media/1007/wes1007ex.36276_lg.jpg" /><br>
-          <a href="https://www.starwoodmeeting.com/StarGroupsWeb/res?id=1312279415&key=45A6D" target="_blank">Book a room at the Westin</a>
-        </span>
-        <br> <br>
-        <span>
-          San Francisco Airport Marriott Waterfront<br>
-          1800 Old Bayshore Highway<br>
-          Burlingame, CA 94010, United States<br>
-          <img width="100px" src="http://cache.marriott.com/propertyimages/s/sfobg/phototour/sfobg_phototour01.jpg" /><br>
+          <span>
+            The Westin San Francisco Airport<br>
+            1 Old Bayshore Highway<br>
+            Millbrae, CA 94030, United States<br>
+            <img src="https://www.starwoodhotels.com/pub/media/1007/wes1007ex.36276_lg.jpg" /><br>
+            <a href="https://www.starwoodmeeting.com/StarGroupsWeb/res?id=1312279415&key=45A6D" target="_blank">Book a room at the Westin</a>
+          </span>
+          <br> <br>
+          <span>
+            San Francisco Airport Marriott Waterfront<br>
+            1800 Old Bayshore Highway<br>
+            Burlingame, CA 94010, United States<br>
+            <img src="http://cache.marriott.com/propertyimages/s/sfobg/phototour/sfobg_phototour01.jpg" /><br>
 
-          <a href="https://aws.passkey.com/event/10842420/owner/12506/landing" target="_blank">Book a room at the Marriott</a>
-        </span>
+            <a href="https://aws.passkey.com/event/10842420/owner/12506/landing" target="_blank">Book a room at the Marriott</a>
+          </span>
+        </div>
       </div>
-      <div class="content hidden" id="registry">
-        We have registered at the following places:<br>
+      <div class="content center hidden" id="registry">
+        We are registered at the following places under Jaqueline Diaz &amp; Simon Luetzelschwab:<br>
+        <br>
         <div>
-          <a href="http://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?registryId=10829346&eventType=Wedding" target="_blank"><img width="100px" src="http://www.bedbathandbeyond.com/_assets/global/images/logo/logo_br.png" /></a><br>
+          <a href="http://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?registryId=10829346&eventType=Wedding" target="_blank"><img src="http://www.bedbathandbeyond.com/_assets/global/images/logo/logo_br.png" /></a><br>
+        </div>
+        <br>
+        <div>
+          <a href="http://www.crateandbarrel.com/Gift-Registry/Jaqueline-Diaz-and-Simon-Luetzelschwab/r5128194" target="_blank"><img src="http://a.c-b.co/assets/logo/cratelogo.png" /></a><br>
         </div>
       </div>
     </div>
