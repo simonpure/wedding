@@ -9,6 +9,12 @@ body {
   font-family: 'Jacques Francois', serif;
   color: #585858;
 }
+.footer {
+  position: absolute;
+  width: 100%;
+  top: 140%;
+  text-align: center;
+}
 .card {
   position: absolute;
   top: 10%;
