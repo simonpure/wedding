@@ -4,6 +4,8 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  min-width: 560px;
+  min-height: 750px;
 }
 body {
   font-family: 'Jacques Francois', serif;
@@ -21,7 +23,7 @@ body {
   right: 5%;
   width: 770px;
   height: 100%;
-  padding: 50px 10px 50px 10px;
+  padding: 35px 10px 50px 10px;
   background-image: url(/static/img/card.png);
   background-size: 100%, 100%;
 }
@@ -35,7 +37,7 @@ body {
   text-align: right;
 }
 .hidden {
-  display: none:
+  display: none;
 }
 .visible {
   display: block;
@@ -48,7 +50,7 @@ body {
 .date {
   font-size: 18px;
   font-weight: bold;
-  padding: 25px 5px 15px 5px;
+  padding: 15px 5px 15px 5px;
 }
 .title {
   width: 20px;
