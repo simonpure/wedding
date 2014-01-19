@@ -77,24 +77,31 @@ body {
   font-size: 22px;
   font-weight: bold;
 }
-.agenda img {
-  width: 250px;
-  margin-bottom: 5px;
-  box-shadow: 10px 10px 10px rgba(0,0,0,.8);
-}
 .agenda {
   width: 700px;
   margin-left: auto;
   margin-right: auto;
 }
-.agenda table {
-  margin: 0 auto;
-  text-align: center;
+.agenda img {
+  width: 250px;
+  margin-bottom: 5px;
+  box-shadow: 10px 10px 10px rgba(0,0,0,.8);
 }
-.agenda td div {
+.agenda iframe {
+  box-shadow: 10px 10px 10px rgba(0,0,0,.8);
+}
+.agenda span {
+  display: inline;
+  position: relative;
+  float: left;
   width: 300px;
-  height: 225;
+  height: 280px;
   margin: 5px;
+}
+.agenda div {
+  width: 620px;
+  margin-left: auto;
+  margin-right: auto;
 }
 #accommodation img {
   width: 250px;
