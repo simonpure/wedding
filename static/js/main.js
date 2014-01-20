@@ -30,15 +30,15 @@
         $(this).removeClass("hidden").addClass("visible");
       }) :
       $("#rsvp_details").fadeOut(FADE_OUT_DURATION, function() {
-        $(this).removeClass("hidden").addClass("visible");
+        $(this).removeClass("visible").addClass("hidden");
       }))
-    }
-      );
+  });
   
   $("#rsvpform").validate({
     rules: {
       accepted: "required",
-      party_size: "required",
+      party_size_adults: "required",
+      party_size_kids: "required",
       title: "required",
       first_name: "required",
       last_name: "required",
@@ -49,7 +49,8 @@
     },
     messages: {
       accepted: "Please select your attendance",
-      party_size: "Please specify # of guests including yourself",
+      party_size_adults: "Please specify # of adults (12+) including yourself",
+      party_size_kids: "Please specify # of kids (<12)",
       title: "Please specify your title",
       first_name: "Please enter your first name",
       last_name: "Please enter your last name",

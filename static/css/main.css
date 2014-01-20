@@ -125,6 +125,41 @@ body {
   float: left;
   margin-top: 80px;
 }
+#rsvpform input, #rsvpform select {
+  color: #585858;
+  padding: 6px 12px;
+  height: 30px;
+  border: 1px solid #ccc;
+  margin-left: 20px;
+  width: 300px;
+  background-color: #fff;
+  border-radius: 4px;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+#rsvpform .error {
+  color: #922F2F;
+  font-style: italic;
+  margin-left: 20px;
+}
+#rsvpform select {
+  width: 326px;
+}
+#rsvpform input[type=submit] {
+  width: 326px;
+  background: #398bce;
+  color: #fff;
+}
+#rsvpform input[type=submit]:hover {
+  background: #286191;
+}
+.addon {
+  width: 350px;
+  display: block;
+  vertical-align: middle;
+}
+.submit {
+  margin-top: 10px;
+}
 #registry img {
   width: 250px;
   margin-bottom: 15px;

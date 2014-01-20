@@ -62,15 +62,19 @@
       </div>
       <div class="content hidden" id="rsvp">
         <div id="rsvpform_outer">
-          Please let us know if you can attend our wedding.
+          <div class="big center">
+            Please let us know if you can attend our wedding.
+          </div>
           <form id="rsvpform">
             <div>
+              <div class="addon">Attendance</div>
               <select id="attendance" name="accepted" class="required">
                 <option value="" selected="selected">Your attendance...</option>
                 <option value="yes">Accepts with Pleasure</option>
                 <option value="no">Declines with Regrets</option>
               </select>
               <br/>
+              <div class="addon">Title</div>
               <select name="title">
                 <option value="" selected="selected">Title...</option>
                 <option value="ms">Ms.</option>
@@ -78,21 +82,25 @@
                 <option value="mr">Mr.</option>
                 <option value="dr">Dr.</option>
               </select>
-              <div style="display: inline-block; margin: 0 10px 7px 0;">
-                <input type="text" name="first_name" style="width: 150px;" value="" placeholder="First name">
+              <div>
+                <div class="addon">First Name</div>
+                <input type="text" name="first_name" value="" placeholder="First name">
               </div>
-              <div style="display: inline-block;">
-                <input type="text" name="last_name" style="width: 150px;" value="" placeholder="Last name">
+              <div>
+                <div class="addon">Last Name</div>
+                <input type="text" name="last_name" value="" placeholder="Last name">
               </div>
-              <div style="display: inline-block;">
-                <input type="text" name="email" style="width: 150px;" value="" placeholder="Email address">
+              <div>
+                <div class="addon">Email</div>
+                <input type="email" name="email" value="" placeholder="Email address">
               </div>
             </div>
 
             <div id="rsvp_details" class="details hidden">
               <div>
-                <select name="party_size">
-                  <option value="" selected="selected">Number of guests...</option>
+                <div class="addon">Party Size</div>
+                <select name="party_size_adults">
+                  <option value="" selected="selected">Number of adults...</option>
                   <option value="1">solo</option>
                   <option value="2">+ significant other</option>
                   <option value="3">+ 3</option>
@@ -106,13 +114,35 @@
                 </select>
               </div>
               <div>
-                <br>
+                <select name="party_size_kids">
+                  <option value="" selected="selected">Number of kids...</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+              </div>
+              <div>
                 <div>
-                  <input type="text" name="allergies" style="width: 150px;" value="" placeholder="Allergies...">
+                  <div class="addon">Allergies</div>
+                  <input type="text" name="allergies" value="" placeholder="Allergies...">
                 </div>
               </div>
             </div>
-            <input type="submit" value="Submit RSVP" /> 
+            <div>
+              <div class="addon">Comments</div>
+              <input type="text" name="comments" value="" placeholder="Comments">
+            </div>
+            <div class="submit">
+              <input type="submit" value="Submit RSVP" />
+            </div>
           </form>
         </div>
         <div id="conf_yes" class="confirmation hidden">
