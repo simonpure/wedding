@@ -82,6 +82,9 @@ body {
   font-size: 22px;
   font-weight: bold;
 }
+.quote {
+  font-style: italic;
+}
 .image {
   margin-top: 50px;
 }
@@ -110,6 +113,9 @@ body {
   width: 620px;
   margin-left: auto;
   margin-right: auto;
+}
+.blocks {
+  margin-top: 50px;
 }
 .hotels {
   width: 720px;
