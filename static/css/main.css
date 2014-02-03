@@ -132,7 +132,7 @@ body {
   display: inline;
   position: relative;
   float: left;
-  margin-top: 80px;
+  margin-top: 60px;
 }
 #rsvpform input, #rsvpform select {
   color: #585858;
@@ -173,4 +173,30 @@ body {
 #registry img {
   width: 250px;
   margin-bottom: 15px;
+}
+.milestone img {
+  width: 250px;
+}
+.milestone .pic {
+  display: inline-block;
+  float: left;
+  height: 200px;
+  width: 250px;
+}
+.milestone .text {
+  vertical-align: middle;
+  display: table-cell;
+  height: 200px;
+  width: 250px;
+}
+.milestone .blank {
+  vertical-align: middle;
+  display: table-cell;
+  height: 100px;
+  width: 250px;
+}
+.milestone .line {
+  display: table-cell;
+  width: 250px;
+  border-bottom: 1px solid black;
 }
