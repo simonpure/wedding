@@ -174,29 +174,36 @@ body {
   width: 250px;
   margin-bottom: 15px;
 }
+.milestone {
+  width: 600px;
+  margin: 0px auto -15px;
+}
 .milestone img {
-  width: 250px;
+  height: 110px;
+  box-shadow: 10px 10px 10px rgba(0,0,0,.8);
 }
 .milestone .pic {
   display: inline-block;
+  height: 110px;
+  width: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.milestone .floatleft {
   float: left;
-  height: 200px;
-  width: 250px;
+}
+.milestone .floatright {
+  float: right;
+}
+.milestone .alignleft {
+  text-align: left;
+}
+.milestone .alignright {
+  text-align: right;
 }
 .milestone .text {
   vertical-align: middle;
   display: table-cell;
-  height: 200px;
-  width: 250px;
-}
-.milestone .blank {
-  vertical-align: middle;
-  display: table-cell;
-  height: 100px;
-  width: 250px;
-}
-.milestone .line {
-  display: table-cell;
-  width: 250px;
-  border-bottom: 1px solid black;
+  height: 110px;
+  width: 610px;
 }
