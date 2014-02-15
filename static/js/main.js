@@ -13,6 +13,7 @@
   $(this).click(function() {
     var menuId = $(this).attr("class").split(/\s+/).slice(-1)[0];
     window.location.hash = menuId;
+    ga('send', 'event', 'menu', 'click', menuId);
     $(".content.visible").fadeOut(FADE_OUT_DURATION, function() {
       $(this).removeClass("visible").addClass("hidden");
       $("#" + menuId).fadeIn(FADE_IN_DURATION, function() {
