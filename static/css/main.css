@@ -151,6 +151,10 @@ body {
   font-style: italic;
   margin-left: 20px;
 }
+#rsvpform label {
+  display: block;
+  font-size: 10px;
+}
 #rsvpform select {
   width: 326px;
 }
@@ -161,6 +165,13 @@ body {
 }
 #rsvpform input[type=submit]:hover {
   background: #286191;
+}
+#rsvpform_outer span {
+  display: inline;
+  position: relative;
+  float: left;
+  width: 360px;
+  margin: 5px;
 }
 .addon {
   width: 350px;

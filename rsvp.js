@@ -14,6 +14,7 @@ exports.guest = function(data) {
 
 var sheetReady = function (data, err, spreadsheet) {
   console.log(data);
+  if (err) throw err;
   spreadsheet.receive(function(err, rows, info) {
     if (err) throw err;
     var row = {};

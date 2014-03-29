@@ -34,6 +34,32 @@
         $(this).removeClass("visible").addClass("hidden");
       }))
   });
+  $("#party_adults").change(function() {
+    var guests = $(this).find(':selected').val() - 1;
+    if (guests <= 0) {
+      return;
+    }
+    var boxes = $("#adl_guests").find("input").length;
+    for (var i = 0; i < (guests - boxes); i++) {
+      $("#adl_guests").append($("#adl_guests").find("input").first().clone());
+    }
+    $("#adl_guests").fadeIn(FADE_IN_DURATION, function() {
+      $(this).removeClass("hidden").addClass("visible");
+    });
+  });
+  $("#party_kids").change(function() {
+    var guests = $(this).find(':selected').val();
+    if (guests <= 0) {
+      return;
+    }
+    var boxes = $("#adl_kids").find("input").length;
+    for (var i = 0; i < (guests - boxes); i++) {
+      $("#adl_kids").append($("#adl_kids").find("input").first().clone());
+    }
+    $("#adl_kids").fadeIn(FADE_IN_DURATION, function() {
+      $(this).removeClass("hidden").addClass("visible");
+    });
+  });
   
   $("#rsvpform").validate({
     rules: {
@@ -41,8 +67,7 @@
       party_size_adults: "required",
       party_size_kids: "required",
       title: "required",
-      first_name: "required",
-      last_name: "required",
+      full_name: "required",
       email: {
         required: true,
         email: true
@@ -53,8 +78,7 @@
       party_size_adults: "Please specify # of adults (12+) including yourself",
       party_size_kids: "Please specify # of kids (<12)",
       title: "Please specify your title",
-      first_name: "Please enter your first name",
-      last_name: "Please enter your last name",
+      full_name: "Please enter your first and last name",
       email: "Please enter a valid email address"
     },
     submitHandler: function(form) {

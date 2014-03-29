@@ -31,8 +31,8 @@ app.get('/', function(request, response) {
 app.post('/', function(request, response) {
   console.log(request.body);
   response.send(request.body);
-  var info = [request.body.title, request.body.first_name,
-      request.body.last_name, request.body.accepted,
+  var info = [request.body.title, request.body.full_name,
+      request.body.accepted,
       request.body.party_size_adults, request.body.party_size_kids,
       request.body.email, request.body.allergies, request.body.comments];
   rsvp.guest(info);
