@@ -31,10 +31,11 @@ app.get('/', function(request, response) {
 app.post('/', function(request, response) {
   console.log(request.body);
   response.send(request.body);
-  var info = [request.body.title, request.body.full_name,
-      request.body.accepted,
+  var info = [request.body.full_name, request.body.accepted,
       request.body.party_size_adults, request.body.party_size_kids,
-      request.body.email, request.body.allergies, request.body.comments];
+      request.body.email, request.body.arrival_date, request.body.allergies, request.body.comments,
+      request.body.guests instanceof Array ? request.body.guests.join(', ') : request.body.guests,
+      request.body.kids instanceof Array ? request.body.kids.join(', ') : request.body.kids];
   rsvp.guest(info);
 });
 

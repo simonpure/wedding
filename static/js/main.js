@@ -37,11 +37,20 @@
   $("#party_adults").change(function() {
     var guests = $(this).find(':selected').val() - 1;
     if (guests <= 0) {
+      $("#adl_guests").fadeOut(FADE_OUT_DURATION, function() {
+        $(this).removeClass("visible").addClass("hidden");
+      });
       return;
     }
     var boxes = $("#adl_guests").find("input").length;
-    for (var i = 0; i < (guests - boxes); i++) {
-      $("#adl_guests").append($("#adl_guests").find("input").first().clone());
+    if (guests - boxes >= 0) {
+      for (var i = 0; i < (guests - boxes); i++) {
+        $("#adl_guests").append($("#adl_guests").find("input").last().clone());
+      }
+    } else {
+      for (var i = 0; i < (boxes - guests); i++) {
+        $("#adl_guests").find("input").last().remove();
+      }
     }
     $("#adl_guests").fadeIn(FADE_IN_DURATION, function() {
       $(this).removeClass("hidden").addClass("visible");
@@ -50,11 +59,20 @@
   $("#party_kids").change(function() {
     var guests = $(this).find(':selected').val();
     if (guests <= 0) {
+      $("#adl_kids").fadeOut(FADE_OUT_DURATION, function() {
+        $(this).removeClass("visible").addClass("hidden");
+      });
       return;
     }
     var boxes = $("#adl_kids").find("input").length;
-    for (var i = 0; i < (guests - boxes); i++) {
-      $("#adl_kids").append($("#adl_kids").find("input").first().clone());
+    if (guests - boxes >= 0) {
+      for (var i = 0; i < (guests - boxes); i++) {
+        $("#adl_kids").append($("#adl_kids").find("input").last().clone());
+      }
+    } else {
+      for (var i = 0; i < (boxes - guests); i++) {
+        $("#adl_kids").find("input").last().remove();
+      }
     }
     $("#adl_kids").fadeIn(FADE_IN_DURATION, function() {
       $(this).removeClass("hidden").addClass("visible");
@@ -66,7 +84,6 @@
       accepted: "required",
       party_size_adults: "required",
       party_size_kids: "required",
-      title: "required",
       full_name: "required",
       email: {
         required: true,
@@ -77,7 +94,6 @@
       accepted: "Please select your attendance",
       party_size_adults: "Please specify # of adults (12+) including yourself",
       party_size_kids: "Please specify # of kids (<12)",
-      title: "Please specify your title",
       full_name: "Please enter your first and last name",
       email: "Please enter a valid email address"
     },
