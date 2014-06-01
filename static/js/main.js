@@ -83,7 +83,6 @@
     rules: {
       accepted: "required",
       party_size_adults: "required",
-      party_size_kids: "required",
       full_name: "required",
       email: {
         required: true,
@@ -93,7 +92,6 @@
     messages: {
       accepted: "Please select your attendance",
       party_size_adults: "Please specify # of adults (12+) including yourself",
-      party_size_kids: "Please specify # of kids (<12)",
       full_name: "Please enter your first and last name",
       email: "Please enter a valid email address"
     },
