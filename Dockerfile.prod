@@ -1,0 +1,25 @@
+###
+# Copyright 2015, Simon Luetzelschwab
+#
+# Wedding Prod Container
+#
+FROM node:0.12.7-slim
+
+MAINTAINER Simon Luetzelschwab <simonl@gmail.com>
+
+ENV NODE_VERSION 0.12.7 
+ENV NPM_VERSION 2.14.1 
+ENV NODE_ENV production
+
+COPY . /src
+
+WORKDIR /src
+
+EXPOSE 8080 
+
+# NPM
+RUN npm install -g forever
+
+RUN npm install --production
+
+CMD ["/usr/local/bin/forever", "/src/app.js"]

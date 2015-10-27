@@ -1,7 +1,6 @@
 var express = require('express');
 var fs = require('fs');
 var path = require('path');
-var rsvp = require('./rsvp');
 
 var default_port = 8080;
 var static_dir = 'static';
@@ -36,6 +35,5 @@ app.post('/', function(request, response) {
       request.body.email, request.body.arrival_date, request.body.allergies, request.body.comments,
       request.body.guests instanceof Array ? request.body.guests.join(', ') : request.body.guests,
       request.body.kids instanceof Array ? request.body.kids.join(', ') : request.body.kids];
-  rsvp.guest(info);
 });
 
